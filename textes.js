@@ -1,0 +1,117 @@
+/* Copie de textes.json pour que index.html marche aussi en double-clic (sans serveur). Si tu modifies textes.json, relance mettre-a-jour-textes.bat. */
+window.TEXTES = {
+  "titre_page": "Jessim Noui — technicien informatique",
+  "description": "Portfolio de Jessim Noui, technicien informatique : Jarvis, mon assistant IA, le tri des offres d'emploi, une boutique en PHP et des sites vitrines.",
+  "menu": { "projets": "Projets", "github": "GitHub", "cv": "CV", "contact": "Contact" },
+  "edition": "Édition spéciale",
+  "nom": "Jessim Noui",
+  "metier": "Technicien informatique · support · réseau · cybersécurité",
+  "une": {
+    "titre": "Mon assistant IA répond en 0,05 seconde",
+    "chapo": "Avant, il lui fallait 63,6 secondes. J'ai mesuré, trouvé la cause, corrigé.",
+    "video_prete": false,
+    "video_tour_prete": false,
+    "video_bientot": "La vidéo arrive bientôt",
+    "video_aria": "Lancer la vidéo de présentation de Jarvis",
+    "legende": "En vidéo : Jarvis, de ma question à la réponse.",
+    "lien_tour": "L'enquête complète et le grand tour en vidéo →"
+  },
+  "chiffre": { "titre": "Le chiffre", "valeur": "15/15", "texte": "bonnes réponses au banc d'essai, contre 4 avant." },
+  "portrait": { "alt": "Portrait de Jessim Noui", "legende": "Photo : P. Parker", "titre": "Portrait", "texte": "Technicien informatique,<br>BTS CIEL, 2025." },
+  "citation": { "texte": "« Je suis Winston Wolf. Je résous les problèmes. »", "source": "— Pulp Fiction" },
+  "aussi": "Aussi dans ce numéro · clique sur un article",
+  "suite": "Suite page 2 →",
+  "articles": [
+    { "id": "offres", "rubrique": "Emploi", "titre": "L'IA lit les offres, le code vérifie", "resume": "189 offres lues, 28 gardées pour un débutant." },
+    { "id": "gardien", "rubrique": "Windows", "titre": "Un ange gardien veille sur la mémoire", "resume": "Quand je joue, Jarvis passe en arrière-plan." },
+    { "id": "boutique", "rubrique": "Web", "titre": "Une boutique et des sites vitrines", "resume": "Du paiement en ligne aux vitrines de commerces." },
+    { "id": "securite", "rubrique": "Sécurité", "titre": "La sécurité, à chaque étape", "resume": "Des failles corrigées, des secrets bien gardés." },
+    { "id": "artag", "rubrique": "BTS", "titre": "La caméra qui reconnaît les figurines", "resume": "Des AprilTags à la place du NFC." }
+  ],
+  "annonce": { "titre": "Petite annonce", "texte": "Technicien informatique cherche un premier poste en support, réseau, cybersécurité ou développement web." },
+  "boutons": { "ecrire": "M'écrire", "cv": "Mon CV", "fermer": "Fermer" },
+  "panneaux": {
+    "jarvis": {
+      "rubrique": "À la une · Projet perso 2026",
+      "titre": "Jarvis, mon assistant IA multi-agents",
+      "video_aria": "Lancer le grand tour de Jarvis en vidéo",
+      "video_legende": "Le grand tour : une journée avec Jarvis, de mes offres d'emploi à son jeu en pixel art.",
+      "blocs": [
+        { "t": "L'idée.", "x": "Un seul endroit pour suivre mes offres, mes candidatures et mes mails, sans envoyer mes données n'importe où." },
+        { "t": "Comment il marche.", "x": "Jarvis reçoit ma demande et la confie au bon agent : emploi, mails, code… Je lui parle depuis mon site, un jeu en pixel art ou Telegram. Si une IA gratuite tombe en panne, il passe à la suivante." },
+        { "t": "Les chiffres.", "x": "Sur mon banc d'essai de 15 questions, il est passé de 4 bonnes réponses en 63,6 s à 15 sur 15 en 0,05 s (médiane). 386 tests automatiques surveillent le reste." }
+      ],
+      "technos": ["Python", "LiteLLM", "Ollama", "MCP", "Telegram", "HTML/CSS/JS"],
+      "liens": [
+        { "texte": "Voir le code", "url": "https://github.com/jessim-noui/jarvis" },
+        { "texte": "Essayer la démo", "url": "https://jessim-noui.github.io/jarvis" }
+      ]
+    },
+    "offres": {
+      "rubrique": "Emploi",
+      "titre": "L'IA lit les offres, le code vérifie",
+      "capture": { "src": "media/emploi.png", "alt": "La liste des offres triées par Jarvis, données fictives" },
+      "blocs": [
+        { "t": "Le problème.", "x": "Beaucoup d'offres « junior » demandent en réalité plusieurs années d'expérience. Les lire une par une, c'est des heures." },
+        { "t": "Ma solution.", "x": "Mes scripts Python récupèrent les annonces de France Travail et d'Adzuna. Une IA lit chacune en entier et me cite la phrase sur l'expérience demandée ; le code vérifie que cette phrase existe vraiment. Le trajet depuis chez moi est calculé." },
+        { "t": "Au final,", "x": "189 offres lues et 28 gardées pour un débutant. Quand c'est flou, l'offre est marquée « à vérifier » et c'est moi qui tranche." }
+      ],
+      "technos": ["Python", "API REST", "IA"],
+      "citation": "« Faites confiance, mais vérifiez. » — proverbe russe",
+      "liens": [ { "texte": "Voir le code", "url": "https://github.com/jessim-noui/tri-offres-emploi" } ]
+    },
+    "gardien": {
+      "rubrique": "Windows",
+      "titre": "Un ange gardien pour mon PC",
+      "capture": { "src": "media/diagnostic.png", "alt": "Un rapport d'exemple du diagnostic PC (inventé)" },
+      "blocs": [
+        { "t": "Pourquoi ?", "x": "Mon IA locale pouvait occuper jusqu'à 14 Go de mémoire et ralentir tout le PC, même en pleine partie." },
+        { "t": "Ce qu'il fait.", "x": "Dès que je lance un jeu, Jarvis se met en retrait. Si la mémoire sature malgré tout, le gardien vide l'IA locale, la ferme si besoin, et me prévient. Mon jeu, Chrome et Discord : il n'y touche jamais." },
+        { "t": "Depuis,", "x": "l'IA locale ne consomme plus rien au repos (contre 14 Go avant), et plus aucune fenêtre ne s'ouvre toute seule." }
+      ],
+      "technos": ["Python", "PowerShell", "Windows"],
+      "liens": [ { "texte": "Voir le code", "url": "https://github.com/jessim-noui/outils-pc-windows" } ]
+    },
+    "boutique": {
+      "rubrique": "Web",
+      "titre": "Une boutique et des sites vitrines",
+      "capture": { "src": "media/paiement.png", "alt": "La page de paiement de test de la boutique" },
+      "blocs": [
+        { "t": "La boutique.", "x": "Pour un client (nom changé ici) : comptes, panier, commandes et vrai paiement par carte, avec une API en PHP, une base MySQL et Stripe. Tout fonctionne en mode test, de l'inscription jusqu'au paiement." },
+        { "t": "Les vitrines.", "x": "Avec un ami, on a construit des sites pour des commerces de notre entourage : traiteur, boulangerie, restaurant… Plusieurs versions à chaque fois, et on gardait la meilleure." },
+        { "t": "Et après ?", "x": "Les commerces ne les ont pas mis en ligne. Je les montre ici en démo, noms et coordonnées changés. Tous s'adaptent au téléphone." }
+      ],
+      "technos": ["PHP", "MySQL", "JavaScript", "Stripe", "HTML/CSS"],
+      "liens": [
+        { "texte": "Voir le code", "url": "https://github.com/jessim-noui/boutique-php" },
+        { "texte": "Voir les sites", "url": "https://jessim-noui.github.io/sites-vitrines" }
+      ]
+    },
+    "securite": {
+      "rubrique": "Sécurité",
+      "titre": "La sécurité, à chaque étape",
+      "capture": { "src": "media/securite.png", "alt": "Schéma : ce qui est vérifié avant chaque mise en ligne. Tests de bout en bout, 3 failles bloquées, scan des secrets, fausses données. Résultat : 0 secret dans 6 dépôts." },
+      "blocs": [
+        { "t": "Dans la boutique,", "x": "en testant tout le parcours, j'ai trouvé trois failles : on pouvait changer le prix, lire les commandes des autres, ou faire passer une commande pour payée sans payer. Maintenant, c'est le serveur qui recalcule le prix et qui demande à Stripe si le paiement a vraiment eu lieu." },
+        { "t": "Sur mon PC,", "x": "l'ange gardien ne peut fermer que les programmes que je lui ai autorisés. Rien d'autre." },
+        { "t": "Avant de publier,", "x": "chaque projet passe un scan des secrets : clés, mots de passe, données perso. Les vraies données sont remplacées par de fausses." }
+      ],
+      "gardefous_titre": "Les garde-fous de Jarvis",
+      "gardefous": ["Le web : une info, pas un ordre", "Rien ne part sans mon clic", "Clés rangées hors du code", "Il demande avant d'installer", "Un bouton « Tout arrêter »", "Une sauvegarde par jour"],
+      "technos": ["Tests de bout en bout", "gitleaks", "PHP", "Python"],
+      "liens": []
+    },
+    "artag": {
+      "rubrique": "Projet de BTS",
+      "titre": "Une caméra qui raconte des figurines",
+      "capture": { "src": "media/bts-apriltag.png", "alt": "Schéma : on pose la figurine avec son AprilTag collé dessous, la caméra OpenMV lit le tag, la page web ouvre la fiche de l'œuvre." },
+      "blocs": [
+        { "t": "Le sujet.", "x": "Mettre en valeur des œuvres de musée : on pose une figurine, l'écran affiche l'œuvre qui va avec." },
+        { "t": "Le coup dur.", "x": "Le NFC prévu est tombé à l'eau, le fournisseur ne répondait plus. Puis mon équipier a quitté le projet : je l'ai mené seul jusqu'au bout." },
+        { "t": "La parade.", "x": "Une caméra OpenMV lit un AprilTag collé sous chaque figurine, et une page en PHP et JavaScript ouvre la fiche de l'œuvre. Détection en temps réel, projet présenté au BTS. Ce qui bloquait le projet l'a finalement fait avancer." }
+      ],
+      "technos": ["OpenMV", "MicroPython", "PHP", "JavaScript"],
+      "liens": []
+    }
+  }
+};

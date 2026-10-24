@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jessim Noui — technicien informatique</title>
+<meta name="description" content="Portfolio de Jessim Noui, technicien informatique.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23111'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%23fdfcf8' font-family='Georgia'%3EJ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Oswald:wght@500;700&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page">
+  <div class="haut">
+    <span id="date"></span>
+    <nav aria-label="Menu">
+      <a href="#articles" data-t="menu.projets"></a>
+      <a href="https://github.com/jessim-noui" data-t="menu.github"></a>
+      <a href="cv/CV_Jessim_Noui.pdf" data-t="menu.cv"></a>
+      <a href="#contact" data-t="menu.contact"></a>
+    </nav>
+  </div>
+  <span class="filet" aria-hidden="true"></span>
+  <div class="titre-journal">
+    <span class="edition" data-t="edition"></span>
+    <h1 class="mast" data-t="nom"></h1>
+  </div>
+  <p class="metier" data-t="metier"></p>
+  <span class="filet" aria-hidden="true"></span>
+
+  <section class="g une">
+    <article class="une-article">
+      <h2 class="une-titre" data-t="une.titre"></h2>
+      <p class="chapo" data-t="une.chapo"></p>
+      <div id="video-une"></div>
+      <div class="une-pied">
+        <span class="legende" data-t="une.legende"></span>
+        <button type="button" class="art lien-tour" data-ouvre="jarvis"><span class="suite" data-t="une.lien_tour"></span></button>
+      </div>
+    </article>
+    <aside class="cote">
+      <div class="chiffre">
+        <span class="sur-titre" data-t="chiffre.titre"></span>
+        <span class="chiffre-valeur" data-t="chiffre.valeur"></span>
+        <span data-t="chiffre.texte"></span>
+      </div>
+      <div class="portrait">
+        <figure>
+          <img src="media/portrait.png" data-alt="portrait.alt" width="128" height="160">
+          <figcaption data-t="portrait.legende"></figcaption>
+        </figure>
+        <div class="portrait-texte">
+          <span class="sur-titre" data-t="portrait.titre"></span>
+          <span data-h="portrait.texte"></span>
+        </div>
+      </div>
+      <blockquote>
+        <span data-t="citation.texte"></span>
+        <span class="source" data-t="citation.source"></span>
+      </blockquote>
+    </aside>
+  </section>
+
+  <span class="filet" aria-hidden="true"></span>
+  <span class="aussi" data-t="aussi"></span>
+  <section id="articles" aria-label="Aussi dans ce numéro" class="g articles"></section>
+  <span class="filet" aria-hidden="true"></span>
+
+  <footer id="contact" class="g pied">
+    <div class="annonce">
+      <span class="annonce-titre" data-t="annonce.titre"></span>
+      <span data-t="annonce.texte"></span>
+    </div>
+    <span class="boutons">
+      <a class="plein" href="mailto:jessim.noui.ciel@gmail.com" data-t="boutons.ecrire"></a>
+      <a class="vide" href="cv/CV_Jessim_Noui.pdf" data-t="boutons.cv"></a>
+    </span>
+  </footer>
+</div>
+
+<div id="fond-panneau" hidden>
+  <button type="button" class="voile" data-ferme tabindex="-1" aria-hidden="true"></button>
+  <article class="panneau" role="dialog" aria-modal="true" aria-labelledby="panneau-titre" tabindex="-1">
+    <div class="panneau-haut">
+      <span id="panneau-rubrique" class="rubrique"></span>
+      <button type="button" class="fermer" data-ferme>×</button>
+    </div>
+    <h2 id="panneau-titre"></h2>
+    <div id="panneau-corps"></div>
+  </article>
+</div>
+<script src="textes.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

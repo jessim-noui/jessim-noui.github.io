@@ -1,0 +1,101 @@
+/* Le journal à l'ancienne (maquette P2) */
+:root { --papier: #fdfcf8; --encre: #111111; --gris: #444444; --orange: #b5561f; --rouge: #b3261e; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--papier); color: var(--encre); font-family: 'Libre Caslon Text', Georgia, serif; }
+a { color: inherit; }
+button { font: inherit; }
+.page { max-width: 1180px; margin: 0 auto; padding: 18px 28px 40px; display: flex; flex-direction: column; gap: 16px; }
+.haut { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 12.5px; letter-spacing: .14em; text-transform: uppercase; }
+.haut nav { display: flex; gap: 18px; flex-wrap: wrap; }
+.filet { display: block; border-top: 3px solid var(--encre); border-bottom: 1px solid var(--encre); height: 3px; }
+.titre-journal { display: flex; flex-direction: column; gap: 2px; }
+.edition { text-align: center; font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 12px; letter-spacing: .4em; text-transform: uppercase; }
+.mast { margin: 0; text-align: center; font-family: 'Pirata One', serif; font-weight: 400; font-size: 118px; line-height: .95; letter-spacing: .01em; }
+.metier { margin: 0; text-align: center; font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 14px; letter-spacing: .3em; text-transform: uppercase; }
+
+.une { display: grid; grid-template-columns: minmax(0, 2.1fr) minmax(0, 1fr); gap: 28px; padding-top: 6px; }
+.une-article { display: flex; flex-direction: column; gap: 12px; border-right: 1px solid var(--encre); padding-right: 28px; }
+.une-titre { margin: 0; font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 58px; line-height: 1; text-transform: uppercase; }
+.chapo { margin: 0; font-style: italic; font-size: 19px; }
+.ecran { position: relative; width: 100%; height: 400px; padding: 0; border: 1px solid var(--encre); color: #fff; overflow: hidden;
+  background: radial-gradient(circle, #ffffff22 1.2px, transparent 1.4px) 0 0/6px 6px, radial-gradient(circle at 50% 40%, #3a3a3a, #0d0d0d 75%); }
+.ecran svg.arbre { position: absolute; inset: 0; opacity: .5; }
+.ecran .bientot { position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%); font-family: 'Oswald', sans-serif; font-size: 14px; letter-spacing: .14em; text-transform: uppercase; background: #000000aa; padding: 6px 12px; white-space: nowrap; }
+.lecteur { display: block; width: 100%; height: 400px; background: #0d0d0d; border: 1px solid var(--encre); object-fit: contain; }
+.rond { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 90px; height: 90px; border-radius: 50%; background: var(--orange); display: grid; place-items: center; box-shadow: 0 0 0 10px #b5561f40; transition: transform .25s ease; }
+.une-pied { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 10px; }
+.legende { font-style: italic; font-size: 14px; color: var(--gris); }
+.lien-tour { cursor: pointer; background: transparent; border: 0; padding: 0; font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 14px; letter-spacing: .08em; text-transform: uppercase; color: var(--orange); }
+
+.cote { display: flex; flex-direction: column; justify-content: space-between; gap: 18px; }
+.sur-titre { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 12px; letter-spacing: .22em; text-transform: uppercase; }
+.chiffre { border: 2px solid var(--rouge); padding: 16px; display: flex; flex-direction: column; gap: 4px; text-align: center; font-size: 15px; }
+.chiffre-valeur { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 84px; line-height: 1; color: var(--rouge); }
+.portrait { display: grid; grid-template-columns: 128px minmax(0, 1fr); gap: 14px; align-items: start; }
+.portrait figure { margin: 0; display: flex; flex-direction: column; gap: 4px; }
+.portrait img { width: 128px; height: 160px; object-fit: cover; object-position: 50% 30%; border: 1px solid var(--encre); display: block; }
+.portrait figcaption { font-style: italic; font-size: 11.5px; color: var(--gris); }
+.portrait-texte { display: flex; flex-direction: column; gap: 6px; font-size: 15.5px; line-height: 1.6; }
+blockquote { margin: 0; border-top: 3px double var(--encre); border-bottom: 3px double var(--encre); padding: 18px 6px; text-align: center; font-style: italic; font-size: 24px; line-height: 1.3; }
+blockquote .source { display: block; margin-top: 8px; font-family: 'Oswald', sans-serif; font-style: normal; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--gris); }
+
+.aussi { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 13px; letter-spacing: .24em; text-transform: uppercase; text-align: center; margin: -4px 0 -2px; }
+.articles { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 18px; }
+.carte { color: var(--encre); text-align: left; cursor: pointer; background: transparent; border: 0; padding: 0 18px 0 0; border-right: 1px solid var(--encre); display: flex; flex-direction: column; gap: 9px; }
+.carte:last-child { border-right: 0; padding-right: 0; }
+.vignette { height: 120px; display: grid; place-items: center; border: 1px solid var(--encre); }
+.carte .rub { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; }
+.carte h3 { margin: 0; font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 21px; line-height: 1.12; text-transform: uppercase; }
+.carte .resume { font-size: 14.5px; line-height: 1.45; }
+.suite { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+.art { transition: transform .25s ease; }
+.art:hover, .art:focus-visible { transform: translateY(-3px); }
+.art:hover .suite, .art:hover h3, .art:focus-visible .suite { text-decoration: underline; }
+.ecran:hover .rond, .ecran:focus-visible .rond { transform: translate(-50%, -50%) scale(1.07); }
+:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
+
+.pied { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px; align-items: center; }
+.annonce { border: 2px solid var(--encre); padding: 14px 18px; display: flex; flex-direction: column; gap: 4px; font-size: 16px; }
+.annonce-titre { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: .14em; text-transform: uppercase; }
+.boutons { display: flex; gap: 10px; flex-wrap: wrap; font-family: 'Oswald', sans-serif; font-weight: 500; text-transform: uppercase; letter-spacing: .06em; }
+.boutons a { padding: 12px 18px; text-decoration: none; }
+.boutons .plein { background: var(--encre); color: var(--papier); }
+.boutons .vide { border: 2px solid var(--encre); }
+
+/* Le panneau de droite */
+#fond-panneau { position: fixed; inset: 0; z-index: 5; display: flex; justify-content: flex-end; }
+#fond-panneau[hidden] { display: none; }
+.voile { position: absolute; inset: 0; border: 0; background: rgba(28, 26, 23, .5); cursor: pointer; }
+.panneau { position: relative; width: min(600px, 100%); height: 100%; overflow-y: auto; background: var(--papier); border-left: 1px solid var(--encre); padding: 22px 30px 36px; display: flex; flex-direction: column; gap: 18px; animation: entre .4s cubic-bezier(.16, 1, .3, 1) both; }
+.panneau:focus { outline: none; }
+@keyframes entre { from { opacity: 0; transform: translateX(24px); } to { opacity: 1; transform: none; } }
+.panneau-haut { display: flex; justify-content: space-between; align-items: center; border-bottom: 3px double var(--encre); padding-bottom: 8px; }
+.rubrique { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 12px; letter-spacing: .22em; text-transform: uppercase; }
+.fermer { width: 44px; height: 44px; border: 0; background: transparent; font-size: 22px; cursor: pointer; color: var(--encre); }
+.panneau h2 { margin: 0; font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 28px; line-height: 1.1; text-transform: uppercase; }
+#panneau-corps { display: flex; flex-direction: column; gap: 18px; }
+#panneau-corps figure { margin: 0; display: flex; flex-direction: column; gap: 5px; }
+#panneau-corps figcaption { font-style: italic; font-size: 13px; color: var(--gris); }
+#panneau-corps .ecran, #panneau-corps .lecteur { height: 270px; }
+#panneau-corps .rond { width: 68px; height: 68px; box-shadow: none; }
+.capture { display: block; width: 100%; height: auto; border: 1px solid var(--encre); }
+.schema { min-height: 200px; border: 1px solid var(--encre); background: radial-gradient(circle, #11111133 1.1px, transparent 1.3px) 0 0/6px 6px, #f1eee8; display: grid; place-items: center; font-family: 'Oswald', sans-serif; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; text-align: center; padding: 0 16px; color: var(--gris); }
+.bloc { margin: 0; font-size: 15.5px; line-height: 1.65; }
+.gardes { border-top: 1px solid var(--encre); border-bottom: 1px solid var(--encre); padding: 16px 0; margin: 6px 0; display: flex; flex-direction: column; gap: 12px; }
+.gardes ul { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; font-size: 15px; line-height: 1.4; }
+.outils { font-family: 'Oswald', sans-serif; font-size: 13px; letter-spacing: .06em; color: var(--gris); }
+.cite { margin: 0; font-style: italic; font-size: 17px; }
+.liens { display: flex; flex-wrap: wrap; gap: 10px; padding-top: 4px; }
+.liens a { padding: 11px 16px; background: var(--encre); color: var(--papier); text-decoration: none; font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 14px; letter-spacing: .08em; text-transform: uppercase; }
+
+@media (max-width: 900px) {
+  .page { padding: 16px 16px 32px; }
+  .g { grid-template-columns: 1fr !important; }
+  .une-article, .carte { border-right: 0; padding-right: 0; }
+  .mast { font-size: 68px; }
+  .une-titre { font-size: 40px; }
+  .ecran, .lecteur { height: 240px; }
+  .gardes ul { grid-template-columns: 1fr; }
+  .panneau { padding: 18px 18px 30px; }
+}
+@media (prefers-reduced-motion: reduce) { .art, .rond, .panneau { transition: none; animation: none; } }
