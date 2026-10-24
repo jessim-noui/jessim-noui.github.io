@@ -9,8 +9,8 @@ window.TEXTES = {
   "une": {
     "titre": "Mon assistant IA répond en 0,05 seconde",
     "chapo": "Avant, il lui fallait 63,6 secondes. J'ai mesuré, trouvé la cause, corrigé.",
-    "video_prete": false,
-    "video_tour_prete": false,
+    "video_prete": true,
+    "video_tour_prete": true,
     "video_bientot": "La vidéo arrive bientôt",
     "video_aria": "Lancer la vidéo de présentation de Jarvis",
     "legende": "En vidéo : Jarvis, de ma question à la réponse.",
